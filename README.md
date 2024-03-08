@@ -12,7 +12,7 @@ PeerIT es un sistema P2P para la compartición de archivos de forma descentraliz
 
 ## 1.1. Aspectos cumplidos o desarrollados de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 
-- Inicialización del servicio: El sistema busca un archivo llamado peerConf.json en el directorio actual. Si no existe![image](https://github.com/DanielPalacios05/DanielPalacios05-st026/assets/82727314/23815c88-228a-4ff7-9d58-d5dadcbb0440), notifica al usuario para que lo cree con la notación mencionada.
+- Inicialización del servicio: El sistema busca un archivo llamado peerConf.json en el directorio actual. Si no existe, notifica al usuario para que lo cree con la notación mencionada.
 - Mostrar estado: El sistema muestra el estado del servicio del Peer, la cantidad de peers en la lista de contactos y los archivos que está compartiendo.
 
 - Descarga de archivos: El sistema permite descargar archivos de la red PeerIT por su nombre y por id.
@@ -51,6 +51,9 @@ Existe un componente dentro de el microservicio de messaging llamado TimedSet qu
 Cuando un peer realiza un fetch se genera un uuid para el proceso
 Cada vez que el peer reciba un mensaje de fetch, revisa que el uuid de el fetch no esta en el TimedSet, si esta no hace broadcast de el fetch, sino, descarta el mensaje.
 
+## Colas usadas
+- fetch_request : Recibe mensajes para hacer broadcast de la fetch request
+- peer_info : Recibe mensajes con informacion de peers de PeerIT
 
 En los siguientes diagramas se evidencia como se resuelve este proceso en el sistema.
 
@@ -126,7 +129,7 @@ Programado en Go 1.21
 3. os/exec,io, path/filepath para ejecutar comandos e interactuar con el filesystem de el host
 4. errors,logs, fmt para imprimir en consola
 
-## Microservicios de el servidor
+## Microservicios 
 
 1. Pika para interactuar con rabbitMQ
 2. json para interactuar con json
