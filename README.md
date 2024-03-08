@@ -1,4 +1,4 @@
-![image](https://github.com/DanielPalacios05/DanielPalacios05-st026/assets/82727314/23815c88-228a-4ff7-9d58-d5dadcbb0440)# Información de la materia: STxxxx Desarrollo de Software
+# Información de la materia: ST0263 Topicos Especiales en Telematica
 #
 # Estudiante(s): Daniel Ricardo Palacios Diego, drpalaciod@eafit.edu.co
 #
@@ -12,7 +12,7 @@ PeerIT es un sistema P2P para la compartición de archivos de forma descentraliz
 
 ## 1.1. Aspectos cumplidos o desarrollados de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 
-- Inicialización del servicio: El sistema busca un archivo llamado peerConf.json en el directorio actual. Si no existe, notifica al usuario para que lo cree con la notación mencionada.
+- Inicialización del servicio: El sistema busca un archivo llamado peerConf.json en el directorio actual. Si no existe![image](https://github.com/DanielPalacios05/DanielPalacios05-st026/assets/82727314/23815c88-228a-4ff7-9d58-d5dadcbb0440), notifica al usuario para que lo cree con la notación mencionada.
 - Mostrar estado: El sistema muestra el estado del servicio del Peer, la cantidad de peers en la lista de contactos y los archivos que está compartiendo.
 
 - Descarga de archivos: El sistema permite descargar archivos de la red PeerIT por su nombre y por id.
