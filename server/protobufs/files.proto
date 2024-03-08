@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message File{
+    string filepath = 1;
+    string filename = 2;
+}
+
+message AvailableFilesRequest{
+}
+
+message AvailableFilesResponse{
+    repeated File file = 1;
+}
+
+message AddFileRequest{
+    File file = 1;
+}
+
+message AddFileResponse{
+    bool isFileUploaded = 1;
+}
+
+service Files{
+    rpc listAvailableFiles(AvailableFilesRequest) returns (AvailableFilesResponse);
+    rpc addFile(AddFileRequest) returns (AddFileResponse);
+}

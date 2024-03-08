@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  peerit-api-client:
+    build:
+      context: .
+      dockerfile: peerit-api-client/Dockerfile
+    ports:
+      - "127.0.0.1:5000:5000"
+    environment:
+      FLASK_ENV: development
+      FLASK_APP: app
+      PEERS_HOST: peers
+      MESSAGING_HOST : messaging
+      FILES_HOST : files
+    networks:
+      - microservices
+  peers:
+    build:
+      context: .
+      dockerfile: peers/Dockerfile
+    volumes: 
+      - peers_dbdata:/service/peers/
+    image: peers
+    networks:
+      - microservices
+
+  files:
+    build:
+      context: .
+      dockerfile: files/Dockerfile
+    volumes: 
+      - files_dbdata:/service/files/
+    image: files
+    networks:
+      - microservices
+  
+  messaging:
+    build:
+      context: .
+      dockerfile: messaging/Dockerfile
+    environment:
+      MQ_HOST : rabbitmq
+      FILES_HOST: files
+    depends_on:
+      - rabbitmq
+    image: messaging
+    networks:
+      - microservices
+    
+  rabbitmq:
+    image: 'rabbitmq:3-management'
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    networks:
+      - microservices
+
+
+
+volumes:
+  peers_dbdata:
+  files_dbdata:
+networks:
+  microservices:

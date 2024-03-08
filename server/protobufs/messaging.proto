@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+import "peers.proto";
+
+
+
+message FetchRequest{
+    Peer initiatingPeer = 1;
+    repeated Peer linkedPeers = 2;
+}
+
+message FetchResponse{
+    int32  peersFetched = 1;
+    int32 filesFetched = 2;
+}  
+
+
+
+service Fetching{
+    rpc initFetch (FetchRequest) returns (FetchResponse);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

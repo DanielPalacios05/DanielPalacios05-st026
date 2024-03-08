@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import "files.proto";
+
+message Peer{
+    string host = 1;
+    int32 port = 2;
+}
+
+message PeerLinkRequest {
+    Peer peer = 1;
+    bool linkPeer = 2;
+}
+
+message PeerLinkResponse{
+    bool added = 1;
+}
+
+message PeerListRequest {
+    bool linkedPeers = 1;
+}
+
+message AddPeerWithFilesRequest{
+    Peer peer = 1;
+    repeated File files = 2; 
+}
+
+message PeerListResponse {
+    repeated Peer peers = 1;
+}
+
+message AddPeerWithFilesResponse{
+    int32 filesUploaded = 1;
+}
+
+service Peers{
+    rpc AddPeer (PeerLinkRequest) returns (PeerLinkResponse);
+    rpc ListPeers (PeerListRequest) returns (PeerListResponse);
+
+    rpc AddPeerWithFiles (AddPeerWithFilesRequest) returns (AddPeerWithFilesResponse);
+}

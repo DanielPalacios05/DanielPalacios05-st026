@@ -1,0 +1,10 @@
+{
+    "listening_ip": "127.0.0.1",
+    "listening_port": 5000,
+    "shared_dir": "/home/danicracker/university/septimo_semestre/topicos_telematica/PeerIT/peerctl/shared_dir",
+    "download_dir": "./download",
+    "server_path" : "../server/docker-compose.yml",
+    "primary_peer_url": "54.235.229.241",
+    "secondary_peer_url": ""
+  }
+  
