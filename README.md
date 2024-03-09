@@ -204,4 +204,4 @@ La búsqueda se realiza de forma local con los resultados de la búsqueda hecha 
 - https://realpython.com/python-microservices-grpc/
 - Distributed systems by Maarten van Steen and Andre S. Tanenbaum
 
-Video de youtube: 
+Video de youtube:  .[https://www.youtube.com/watch?v=EblxUD-OAOs]
